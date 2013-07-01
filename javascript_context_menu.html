@@ -1,0 +1,32 @@
+<html>
+<head>
+<style>
+  ul
+  {
+    list-style-type:none;
+    border-style:solid;
+  }
+</style>
+<script type="text/javascript">  
+  function custom_right_click(evt){
+    evt.preventDefault();
+    var context_menu ='<ul><li>User Defined Context menu</li><li>By Taha</li><li>Sadikot</li></ul>';
+    document.getElementById('d').innerHTML = context_menu;
+    document.getElementById('d').style.marginTop=evt.clientY;
+    document.getElementById('d').style.marginLeft=evt.clientX;
+    document.getElementById('d').style.visibility="visible"
+    document.getElementById('d').style.height=150;
+    document.getElementById('d').style.width=350;
+  }  
+  if (document.addEventListener)
+  { 
+  window.addEventListener("contextmenu",function(evt){custom_right_click(evt);}, false)  
+  }
+</script>
+
+</head>
+<body  >
+<div name="d" id="d" style.visibility="hidden" >
+</div>
+</body>
+</html>
